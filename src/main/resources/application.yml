@@ -1,0 +1,37 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /finance-api
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/archangel
+    username: svc_finance
+    password: a.123456
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak.com.au:8180/realms/archangel
+
+logging:
+  # file:
+  #   name: log/debug.log
+  level:
+    root: info
+
+env:
+  keycloak:
+    client-id: nest-auth-app
+    url: http://keycloak.com.au:8180
+    realm: archangel
+    client-secret: pSYktmVBYw5YZqeAeAWwLDPvN6w9Tp56
