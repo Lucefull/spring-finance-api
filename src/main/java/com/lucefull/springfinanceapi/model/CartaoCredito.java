@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tab_cartoes_credito", schema = "finance")
-@DiscriminatorValue("D")
+@DiscriminatorValue("C")
 public class CartaoCredito extends Cartao {
     private int diaFechamento;
     private int vencimentoFatura;
